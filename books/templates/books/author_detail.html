@@ -1,0 +1,27 @@
+{% extends 'books/header.html' %}
+
+{% block content %}
+    <div class="author">
+        <h1>
+        {{author.first_name}} {{author.second_name}}
+        </h1>
+        <h3>
+        {% if author.active%}
+        (still active)
+        {% else %}
+        (not active)
+        {% endif %}
+        </h3>
+        <p>{{author.biography}}</p>
+    </div>
+
+    {% for review in new.reviews.all %}
+        <br>
+        <div class="review">
+        <strong>{{review.author}}:</strong>
+        {{review.text|linebreaks}}
+    {% empty %}
+    <p>No reviews here yet :(</p>
+        </div>
+    {% endfor %}
+{% endblock %}

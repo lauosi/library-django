@@ -1,0 +1,52 @@
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+}
+
+.page-header {
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.date {
+    float: right;
+    color: #828282;
+}
+
+
+.comments_info {
+    float: right;
+}
+
+.comments_data{
+    float: right;
+    margin: 20px 0px 20px 20px;
+}
+
+
+a{
+    color: #1e1d1d;
+}
+.title_page {
+    padding-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.review{
+    float:left;
+}
+
+.rate{
+    float:left;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.book_title{
+    padding-bottom: 10px;
+}

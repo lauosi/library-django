@@ -1,0 +1,40 @@
+{% extends 'books/header.html' %}
+
+{% block content %}
+    <div class="news">
+        <div class="date">
+            <p> The book was published:
+            {{ book.publication_date}}
+            </p>
+        </div>
+        <h1 class="book_title">{{ book.title }}</h1>
+        <h3> Written by: <a href="{% url 'author_detail' pk=book.author.pk %}">{{book.author.first_name}} {{book.author.second_name}} </a></h3>
+        <p>{{book.description}}</p>
+
+
+        <div class="row rate">
+            <div class="col-md-5">
+            <h3>Ratings</h3>
+            <ul>
+                {% for rate in book.ratebook.all%}
+                <br>
+                    <li>
+                    <a href="">{{rate.rate_text}}
+                    </a> -- {{rate.votes}} votes{{rate.votes|pluralize}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="review col-md-7">
+            <h3> Reviews </h3>
+            {% for review in book.reviews.all %}
+                <br>
+                <strong>{{review.author}}:</strong>
+                {{review.text|linebreaks}}
+            {% empty %}
+            <p>No reviews here yet :(</p>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+{% endblock %}

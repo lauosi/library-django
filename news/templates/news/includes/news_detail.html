@@ -1,0 +1,22 @@
+{% extends 'news/header.html' %}
+
+{% block content %}
+    <div class="news">
+        <div class="date">
+            {{ new.date}}
+        </div>
+        <h1>{{ new.title }}</h1>
+        <p>{{ new.text}}</p>
+        <h3> Comments </h3>
+    </div>
+
+    {% for comment in new.comments.all %}
+        <br>
+        <div class="comments_data">
+        <strong>{{comment.author}}:</strong>
+        {{comment.text|linebreaks}}
+    {% empty %}
+    <p>No comments here yet :(</p>
+        </div>
+    {% endfor %}
+{% endblock %}

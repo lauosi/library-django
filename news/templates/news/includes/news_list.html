@@ -1,0 +1,16 @@
+{% extends 'news/header.html' %}
+
+{% block content %}
+    {% for new in news %}
+        <div class="news">
+            <div class="date">
+                {{ new.date}}
+            </div>
+            <h2><a href="{% url 'news_detail' pk=new.pk %}">{{ new.title }}</a></h2>
+            <p>{{ new.text|linebreaks }}</p>
+            <h3><a href="{% url 'news.views.news_detail' pk=new.pk %}">Comments: {{ new.comments.count }}</a>
+            </h3>
+                    </div>
+    {% endfor %}
+{% endblock %}
+
