@@ -1,0 +1,18 @@
+{% extends 'news/header.html' %}
+
+{% block content %}
+    <div class="news">
+        <div class="date">
+            {{ new.date}}
+        </div>
+        <h1>{{ new.title }}</h1>
+        <p>{{ new.text}}</p>
+    </div>
+
+    <h1>Add comment:</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
+

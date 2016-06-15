@@ -7,7 +7,7 @@ class PostForm(forms.ModelForm):
         model = News
         fields = ('title', 'text',)
         
-class PostComment(forms.ModelForm):
+class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment

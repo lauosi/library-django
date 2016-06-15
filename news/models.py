@@ -16,7 +16,7 @@ class Comment(models.Model):
     news = models.ForeignKey('News', related_name="comments")
     author = models.CharField(max_length=200)
     date = models.DateTimeField(default=timezone.now)
-    text = models.CharField(max_length=500)
+    text = models.TextField()
     approved_comment = models.BooleanField(default=False)
 
     def approve(self):
