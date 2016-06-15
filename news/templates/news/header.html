@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 
 <head>
     <title>Library RaraAvis</title>
     <meta charset="utf-8" />
-    {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'news/css/bootstrap.min.css' %}" type="text/css"/>
     <link rel="stylesheet" href="{% static 'news/css/main.css' %}" type="text/css"/>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
@@ -18,6 +18,7 @@
                 <h1 class="title_page"> <a href="">Library Rara Avis</a></h1>
                 <!-- <img src="{% static 'news/img/cover.png' %}" alt="cover""> -->
             </center>
+            <a href="{% url 'news_new' %}"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
         <div class="row">
             <div class="col-md-10">
