@@ -1,0 +1,14 @@
+{% extends 'books/header.html' %}
+
+{% block content %}
+    <div class="add review">
+        <h1 class="book_title">{{ book.title }}</h1>
+        <div class="review col-md-10">
+            <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+        </div>
+        </div>
+    </div>
+{% endblock %}

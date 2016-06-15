@@ -9,7 +9,7 @@
         <h1>{{ new.title }}</h1>
         <p>{{ new.text}}</p>
         <h3> Comments </h3>
-        <a href="{% url 'add_comment_to_news' pk=new.pk %}", class="glyphicon glyphicon-plus"></a>
+        <a href="{% url 'add_comment_to_news' pk=new.pk %}"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
 
     {% for comment in new.comments.all %}

@@ -27,6 +27,7 @@
 
         <div class="review col-md-7">
             <h3> Reviews </h3>
+            <a href="{% url 'add_review' pk=book.pk %}"><span class="glyphicon glyphicon-plus"></span></a>
             {% for review in book.reviews.all %}
                 <br>
                 <strong>{{review.author}}:</strong>
