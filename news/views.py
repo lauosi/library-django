@@ -28,4 +28,19 @@ def news_new(request):
     else:
         form = PostForm()
     return render(request, 'news/includes/news_add.html', {'form': form})
+
+@login_required
+def news_edit(request, pk):
+    news = get_object_or_404(News, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=news)
+        if form.is_valid():
+            news = form.save(commit=False)
+            news.published_date = timezone.now()
+            news.save()
+            return redirect('news_detail', pk=news.pk)
+    else:
+        form = PostForm(instance=news)
+    return render(request, 'news/includes/news_add.html', {'form': form})
+    
     

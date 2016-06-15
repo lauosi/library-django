@@ -3,6 +3,7 @@
 {% block content %}
     <div class="news">
         <div class="date">
+            <a class="btn btn-default" href="{% url 'news_edit' pk=new.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             {{ new.date}}
         </div>
         <h1>{{ new.title }}</h1>
